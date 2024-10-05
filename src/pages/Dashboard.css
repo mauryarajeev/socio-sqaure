@@ -1,0 +1,106 @@
+:root {
+    --bg-color: #f5f8fa; /* Light background */
+    --card-bg: #ffffff;  /* Card background */
+    --text-color: #333;  /* Dark text */
+    --accent-color: #007bff; /* Accent color */
+    --hover-bg-color: #898b8d;
+    --hover-text-color: #ffffff;
+    --icon-color: #007bff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+}
+
+.dashboard-header {
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-title {
+    font-size: 2.5rem; /* Increase the font size for prominence */
+    color: var(--accent-color); /* Use the accent color defined in root variables */
+    margin: 0; /* Remove default margin */
+}
+
+.dashboard-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default to a single column for mobile */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the grid */
+    margin: 0 auto; /* Centering the grid */
+    padding: 0 1rem; /* Add padding to prevent cards from touching the edges */
+}
+
+.dashboard-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    min-width: 250px; /* Set a minimum width for the cards */
+}
+
+.dashboard-card:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    transform: scale(1.05);
+}
+
+.dashboard-card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-text {
+    display: flex;                /* Use flexbox for alignment */
+    align-items: center;         /* Center items vertically */
+    margin: 0.5rem 0;           /* Vertical spacing */
+}
+
+.icon {
+    margin-right: 8px;          /* Space between icon and text */
+    color: var(--icon-color);   /* Use the defined icon color */
+}
+.icons {
+    margin-right: 8px;          /* Space between icon and text */
+    color: var(--icon-color);   /* Use the defined icon color */
+}
+.text-center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 2.5rem;
+}
+
+/* Responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Two columns for tablet devices */
+    }
+}
+
+@media (min-width: 1025px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Three columns for desktop */
+    }
+}
