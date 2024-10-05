@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { RootState } from '../redux/store';
 import { FaEnvelope, FaUser } from 'react-icons/fa';
+import Spinner from '../components/Spinner';
 import './Dashboard.css';  
 
 const Dashboard: React.FC = () => {
@@ -17,8 +18,7 @@ const Dashboard: React.FC = () => {
       navigate('/register');
     }
   }, [registered, navigate]);
-
-  if (isLoading) return <div className="text-center mt-10 text-2xl">Loading...</div>;
+  if (isLoading) return <div className="text-center mt-10 text-2xl"><Spinner /></div>;
   if (error) return <div className="text-center mt-10 text-red-500">Error fetching users</div>;
 
   return (
